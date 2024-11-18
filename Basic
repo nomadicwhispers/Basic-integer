@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class DecimalSumCalculator {
+
+    public static void main(String[] args) {
+        // Create a Scanner object to take user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask the user for a number
+        System.out.print("Enter a positive decimal number: ");
+        double number = scanner.nextDouble();
+
+        // Validate input
+        if (number < 0) {
+            System.out.println("Please enter a positive number.");
+            return;
+        }
+
+        // Ask the user for the increment step
+        System.out.print("Enter the increment step (e.g., 0.1): ");
+        double step = scanner.nextDouble();
+
+        if (step <= 0) {
+            System.out.println("Step must be a positive number greater than 0.");
+            return;
+        }
+
+        // Calculate the sum of numbers from 0 to the entered number with the given step
+        double sum = 0.0;
+        for (double i = 0; i <= number; i += step) {
+            sum += i;
+        }
+
+        // Display the result
+        System.out.println("The sum of numbers from 0 to " + number + " with step " + step + " is " + sum);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
